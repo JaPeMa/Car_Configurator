@@ -1,6 +1,6 @@
 <basicConfig>
-	<car_configuration_path></car_configuration_path>
-	<car_configuration_file_name></car_configuration_file_name>
+	<car_configuration_path>src/LectorXML/</car_configuration_path>
+	<car_configuration_file_name>cars_config.xml</car_configuration_file_name>
 	<employee_list>Jaime,Victor,Marc</employee_list>  <!--lista de nombres de empleados separados por , -->
 	<employee_password>password,password,password</employee_password>  <!--lista de contraseñas de empleados separados por , -->
 	<specifications_file_path>/src/main/Main.java</specifications_file_path>

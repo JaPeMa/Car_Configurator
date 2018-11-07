@@ -7,7 +7,7 @@ import interfaces.Login;
 public class Main {
 
 	public static void main(String[] args) {
-		Configuration confi=ConfigurationLoader.getConfiguration();
+		ConfigurationLoader confi=ConfigurationLoader.getConfiguration();
 		Login.main(null);
 		
 	}
