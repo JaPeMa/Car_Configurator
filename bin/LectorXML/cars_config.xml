@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<xml_cars_config>
+	<models>
+		<model>
+			<id>0001</id>
+			<name>SEATalhambra</name>
+			<descript>El SEAT Alhambra es el buque insignia de la gama SEAT por tamaño y capacidad de transporte</descript>
+			<image_name>seatibiza1.jpg,seatibiza11.jpg</image_name>
+			<price>25000</price>
+		</model>
+
+		<model>
+			<id>0002</id>
+			<name>SEATarona</name>
+			<descript>El SEAT Arona es el primer crossover del segmento B de SEAT. Se trata de una versión crossover del SEAT Ibiza</descript>
+			<image_name>seatibiza2.jpg,seatibiza22.jpg</image_name>
+			<price>13900</price>
+		</model>
+
+		<model>
+			<id>0003</id>
+			<name>SEATateca</name>
+			<descript>El SEAT Ateca es el primer SUV de SEAT. Es un todocamino de tamaño mediano, comparable al Audi Q3 o al Kia Sportage</descript>
+			<image_name>seatibiza3.jpg,seatibiza33.jpg</image_name>
+			<price>17900</price>
+		</model>
+
+		<model>
+			<id>0004</id>
+			<name>SEATibiza</name>
+			<descript>El SEAT Ibiza es el utilitario de SEAT, la opción del segmento B del fabricante español, un coche pequeño que es rival del Reanult Clio, del Peugeot 208, del Mazda2 o del Ford Fiesta</descript>
+			<image_name>seatibiza4.jpg,seatibiza44.jpg</image_name>
+			<price>9990</price>
+		</model>
+		
+		<model>
+			<id>0005</id>
+			<name>SEATleon</name>
+			<descript>El SEAT León es un compacto de precio competitivo disponible con carrocerías de 5 puertas, 3 puertas y carrocería familiar</descript>
+			<image_name>seatibiza5.jpg,seatibiza55.jpg</image_name>
+			<price>13990</price>
+		</model>
+		
+		<model>
+			<id>0006</id>
+			<name>SEATpanda</name>
+			<descript>El SEAT Panda es un automóvil utilitario (segmento A) diseñado por Giorgetto Giugiaro y producido por esta firma bajo licencia de Fiat</descript>
+			<image_name>seatibiza6.jpg,seatibiza66.jpg</image_name>
+			<price>6250</price>
+		</model>
+		
+		<model>
+			<id>0007</id>
+			<name>SEATtarraco</name>
+			<descript>El SEAT Tarraco es un todocamino grande de hasta 7 plazas fabricado por SEAT, que se sitúa un escalón por encima del SEAT Ateca</descript>
+			<image_name>seatibiza7.jpg,seatibiza77.jpg</image_name>
+			<price>33000</price>
+		</model>
+	</models>
+	
+	
+
+	<engines>
+		<engine>
+			<id>1001</id>
+			<name>MotorDiesel</name>
+			<descript> los motores diésel son principalmente empleados en medios de transporte que requieren una dosis extra de potencia y que están pensados para una mayor carga diaria de trabajo</descript>
+			<image_name>motor_diesel</image_name>
+			<price>1100</price>			
+		</engine>
+
+		<engine>
+			<id>1002</id>
+			<name>MotorElectrico</name>
+			<descript>motor eléctrico puro, capaz de transformar la energía eléctrica en energía mecánica por medio de los campos magnéticos que genera, sin necesidad de explosiones ni combustiones propias de los motores gasolina y diésel</descript>
+			<image_name>motor_electrico</image_name>
+			<price>2400</price>			
+		</engine>
+	</engines>
+
+	<accesories>
+		<accesory>
+			<id>2001</id>
+			<name>AutoRadio</name>
+			<descript>Autorradio JVC para coche con tecnología Bluetooth, también incluye función de reconocimiento por voz</descript>
+			<image_name>autoradio.png</image_name>
+			<price>99</price>	
+			<model_available>
+				<model_id>0001</model_id>
+				<model_id>0003</model_id>
+				<model_id>0004</model_id>
+				<model_id>0005</model_id>
+				<model_id>0007</model_id>
+			</model_available>
+		</accesory>
+
+		<accesory>
+			<id>2002</id>
+			<name>SistemaMultimedia</name>
+			<descript>Bluetooth manos Libres, Puerto USB, Potencia de 4x40W</descript>
+			<image_name>sistema_multimedia.png</image_name>
+			<price>139</price>	
+			<model_available>
+				<model_id>0001</model_id>
+				<model_id>0002</model_id>
+				<model_id>0005</model_id>
+				<model_id>0006</model_id>
+			</model_available>
+		</accesory>
+
+		<accesory>
+			<id>2003</id>
+			<name>KitManosLibres</name>
+			<descript>Excelente calidad de sonido, Integrado en el sistema de audio del vehículo</descript>
+			<image_name>kit_manos_libres.png</image_name>
+			<price>149</price>	
+			<model_available>
+				<model_id>0003</model_id>
+				<model_id>0004</model_id>
+				<model_id>0005</model_id>
+				<model_id>0006</model_id>
+				<model_id>0007</model_id>
+			</model_available>
+		</accesory>
+
+		<accesory>
+			<id>2004</id>
+			<name>Altavoces</name>
+			<descript>Altavoces para coche coaxiales 6x9, 350W de potencia pico y 90W de potencia RMS</descript>
+			<image_name>altavoces.png</image_name>
+			<price>75</price>	
+			<model_available>
+				<model_id>0001</model_id>
+				<model_id>0002</model_id>
+				<model_id>0003</model_id>
+				<model_id>0004</model_id>
+				<model_id>0007</model_id>
+			</model_available>
+		</accesory>
+
+		<accesory>
+			<id>2005</id>
+			<name>Tapacubos</name>
+			<descript>Tapacubos 13" en plata, modelo 420 PLATA SPARK</descript>
+			<image_name>tapacubos.png</image_name>
+			<price>17</price>	
+			<model_available>
+				<model_id>0001</model_id>
+				<model_id>0002</model_id>
+				<model_id>0003</model_id>
+				<model_id>0004</model_id>
+				<model_id>0005</model_id>
+				<model_id>0006</model_id>
+				<model_id>0007</model_id>
+			</model_available>
+		</accesory>
+
+		<accesory>
+			<id>2006</id>
+			<name>CadenasDeNieve</name>
+			<descript>Cadenas de nieve metálicas para tus neumáticos con sistema de tensión autoblocante y muelle lateral</descript>
+			<image_name>cadenas_de_nieve.png</image_name>
+			<price>54</price>	
+			<model_available>
+				<model_id>0001</model_id>
+				<model_id>0002</model_id>
+				<model_id>0003</model_id>
+				<model_id>0004</model_id>
+				<model_id>0005</model_id>
+				<model_id>0006</model_id>
+				<model_id>0007</model_id>
+			</model_available>
+		</accesory>
+	</accesories>
+
+</xml_cars_config>

@@ -1,0 +1,1 @@
+Login:,Password:,ENTRAR,GUARDAR,SIGUIENTE,ANTERIOR,FINALIZAR,ATRAS,DATOS DEL CLIENTE,SELECCIONAR EL MODELO DE COCHE,SELECCION DE CARACTERÍSTICAS DEL MODELO,COMPRA DE ACCESORIOS,RESULTADO,Usuario:,Nombre*,Primer Apellido*,Segundo Apellido*,Direccion*,Correo Electronico*,Genero,Hombre,Mujer,No determinado,Fecha Nacimiento,AUGMENTO EN EL PRECIO:,Precio Final:

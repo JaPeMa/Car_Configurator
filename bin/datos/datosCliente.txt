@@ -1,0 +1,1 @@
+Cliente [nombre=, primer_apellido=, segundo_apellido=, direccion=, email=, genero=null, fecha=null]

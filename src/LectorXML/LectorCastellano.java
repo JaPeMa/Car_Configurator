@@ -22,9 +22,6 @@ public class LectorCastellano {
 	          String linea=sc.nextLine();
 	          lineaseparadas=linea.split(",");
 	        
-	          for (int i = 0; i < lineaseparadas.length; i++) {
-				System.out.println(i + " " + lineaseparadas[i]);
-	          }
 	          
 	       }
 	      	
