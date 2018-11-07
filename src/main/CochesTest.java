@@ -1,8 +1,11 @@
 package main;
 
+import java.util.Arrays;
+
 import LectorXML.LectorCochesConfig;
 import LectorXML.LectorXML;
 import idao.ICoches;
+import objetos.Accesory;
 
 public class CochesTest {
 
@@ -17,7 +20,9 @@ public class CochesTest {
 		
 		
 		System.out.println("IMPRIMIMOS ACCESORIOS");
-		gestorCars.getAccesoryAll().forEach(System.out::println);
+		for(Accesory accesory: gestorCars.getAccesoryAll()) {
+			System.out.println(Arrays.toString(accesory.getModel_available()));
+		}
 		
 		
 	}

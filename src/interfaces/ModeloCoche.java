@@ -33,7 +33,7 @@ public class ModeloCoche extends JFrame {
 	private JPanel contentPane;
 	private static JTextArea txtFdgdfgdas;
 	private String[] texts;
-	
+	public static Cliente cliente = null;
 	
 	
 	
@@ -42,12 +42,18 @@ public class ModeloCoche extends JFrame {
 	static JLabel lblNewLabel_1;
 	static ICoches gestorCars = new LectorCochesConfig();
 	
+	
+	public static void setCliente(Cliente cliente) {
+		ModeloCoche.cliente = cliente;
+	}
+
 	/**
 	 * Launch the application.
 	 * 
 	 * @param cliente
 	 */
 	public static void main(String args, Cliente cliente) {
+		if (cliente != null) setCliente(cliente);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -225,6 +231,8 @@ public class ModeloCoche extends JFrame {
 		JButton btnSiguiente = new JButton(texts[4]);
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				selec_model.main(gestorCars.getModelAll().get(index).getId());
 			}
 		});
 
