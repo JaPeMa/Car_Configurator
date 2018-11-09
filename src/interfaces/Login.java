@@ -13,18 +13,22 @@ import configuration.ConfigurationLoader;
 import interfaces.Datos_Cliente;
 
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
@@ -56,6 +60,8 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		//setTitle(); 
+		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
 		texts = LectorCastellano.leer();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

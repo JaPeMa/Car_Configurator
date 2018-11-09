@@ -23,8 +23,11 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Toolkit;
+
 import javax.swing.JScrollBar;
 import javax.swing.JTextArea;
 
@@ -70,8 +73,7 @@ public class ModeloCoche extends JFrame {
 	 * Create the frame.
 	 */
 	public ModeloCoche(String userName, Cliente cliente) {
-		
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
 		texts = LectorCastellano.leer();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 645, 588);

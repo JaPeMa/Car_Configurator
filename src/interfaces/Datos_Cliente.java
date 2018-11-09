@@ -21,8 +21,10 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.Font;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -86,7 +88,7 @@ public class Datos_Cliente extends JFrame {
 			fw.write(c1.toString());
 			fw.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
@@ -108,7 +110,7 @@ public class Datos_Cliente extends JFrame {
 	}
 
 	public Datos_Cliente(String userName, Cliente cliente) {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
 		ConfigurationLoader conf = ConfigurationLoader.getConfiguration();
 		texts = LectorCastellano.leer();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

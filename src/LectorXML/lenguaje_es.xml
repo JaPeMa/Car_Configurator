@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+	<lenguaje_es>
+		<boton_entrar>ES_ENTRAR</boton_entrar>
+		<boton_guardar>ES_GUARDAR</boton_guardar>
+		<boton_siguiente>ES_SIGUIENTE</boton_siguiente>
+		<boton_anterior>ES_ANTERIOR</boton_anterior>
+		<boton_finalizar>ES_FINALIZAR</boton_finalizar>
+		<boton_atras>ES_ATRAS</boton_atras>
+		<boton_nuevo>ES_NUEVO</boton_nuevo>
+		<titulo_Default>IES Esteve Terrades</titulo_Default>
+		<user>Usuario: </user>
+		
+		<login>
+			<login>ES_Login:</login>
+			<pass>ES_Password:</pass>
+		</login>
+		
+		<datos_del_cliente>
+			<titulo>ES_DATOS DEL CLIENTE</titulo>
+			<nombre>ES_Nombre*</nombre>
+			<Primer_apellido>ES_Primer Apellido*</Primer_apellido>
+			<Segindo_apellido>ES_Segundo apellido*</Segindo_apellido>
+			<direccion>ES_Direccion</direccion>
+			<correo_electronico>ES_Correo Electronico*</correo_electronico>
+			<genero>ES_Genero</genero>
+			<genero_hombre>ES_Hombre</genero_hombre>
+			<genero_mujer>ES_Mujer</genero_mujer>
+			<genero_nodeterminado>ES_No Determinado</genero_nodeterminado>
+			<fecha_nacimiento>ES_Fecha Nacimiento</fecha_nacimiento>
+		</datos_del_cliente>
+		
+		<seleccionar_el_modelo>
+			<titulo>ES_SELECCIONAR EL MODELO DE COCHE</titulo>
+		</seleccionar_el_modelo>
+		
+		<seleccionar_caracteristicas>
+			<titulo>ES_SELECCION DE CARACTERISTICAS DLE MODELO</titulo>
+		</seleccionar_caracteristicas>
+		
+		<comprar_accesorios>
+			<titulo>ES_COMPRA DE ACCESORIOS</titulo>
+			<augmento_precio>ES_Augmento en el precio:</augmento_precio>
+		</comprar_accesorios>
+		
+		<resumen>
+			<titulo>ES_RESULTADO</titulo>
+			<precio_final>ES_precio final:</precio_final>
+		</resumen>
+		
+		<mesajes>
+			<mensaje_entrada_empreado>ES_Has entrado en la versión de empleado</mensaje_entrada_empreado>
+			<mensaje_no_entrada_empreado>ES_No has entrado en la versión de empleado</mensaje_no_entrada_empreado>
+			<mensaje_user_o_pass_incorecto>ES_El usuario o la contraseña introducida no es válida</mensaje_user_o_pass_incorecto>
+			<mensaje_salir_singuardar>ES_Quieres salir sin guardar??</mensaje_salir_singuardar>
+			<mensaje_operacion_correcta>ES_La operación se ha realizado correctamente</mensaje_operacion_correcta>
+			<mensaje_introducir_datos>ES_Introduce todos los campos obligatorios</mensaje_introducir_datos>
+			<mensaje_email>ES_Formanto email incorrecto</mensaje_email>
+		</mesajes>
+	
+	
+	</lenguaje_es>

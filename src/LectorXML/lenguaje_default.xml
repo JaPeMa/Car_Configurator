@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+	<lenguaje_default>
+		<boton_entrar>ENTRAR</boton_entrar>
+		<boton_guardar>GUARDAR</boton_guardar>
+		<boton_siguiente>SIGUIENTE</boton_siguiente>
+		<boton_anterior>ANTERIOR</boton_anterior>
+		<boton_finalizar>FINALIZAR</boton_finalizar>
+		<boton_atras>ATRAS</boton_atras>
+		<boton_nuevo>NUEVO</boton_nuevo>
+		<titulo_Default>IES Esteve Terrades</titulo_Default>
+		<user>Usuario: </user>
+		
+		<login>
+			<login>Login:</login>
+			<pass>Password:</pass>
+		</login>
+		
+		<datos_del_cliente>
+			<titulo>DATOS DEL CLIENTE</titulo>
+			<nombre>Nombre*</nombre>
+			<Primer_apellido>Primer Apellido*</Primer_apellido>
+			<Segindo_apellido>Segundo apellido*</Segindo_apellido>
+			<direccion>Direccion*</direccion>
+			<correo_electronico>Correo Electronico*</correo_electronico>
+			<genero>Genero</genero>
+			<genero_hombre>Hombre</genero_hombre>
+			<genero_mujer>Mujer</genero_mujer>
+			<genero_nodeterminado>No Determinado</genero_nodeterminado>
+			<fecha_nacimiento>Fecha Nacimiento</fecha_nacimiento>
+		</datos_del_cliente>
+		
+		<seleccionar_el_modelo>
+			<titulo>SELECCIONAR EL MODELO DE COCHE</titulo>
+		</seleccionar_el_modelo>
+		
+		<seleccionar_caracteristicas>
+			<titulo>SELECCION DE CARACTERISTICAS DLE MODELO</titulo>
+		</seleccionar_caracteristicas>
+		
+		<comprar_accesorios>
+			<titulo>COMPRA DE ACCESORIOS</titulo>
+			<augmento_precio>Augmento en el precio:</augmento_precio>
+		</comprar_accesorios>
+		
+		<resumen>
+			<titulo>RESULTADO</titulo>
+			<precio_final>precio final:</precio_final>
+		</resumen>
+		
+		<mesajes>
+			<mensaje_entrada_empreado>Has entrado en la versión de empleado</mensaje_entrada_empreado>
+			<mensaje_no_entrada_empreado>No has entrado en la versión de empleado</mensaje_no_entrada_empreado>
+			<mensaje_user_o_pass_incorecto>El usuario o la contraseña introducida no es válida</mensaje_user_o_pass_incorecto>
+			<mensaje_salir_singuardar>Quieres salir sin guardar??</mensaje_salir_singuardar>
+			<mensaje_operacion_correcta>La operación se ha realizado correctamente</mensaje_operacion_correcta>
+			<mensaje_introducir_datos>Introduce todos los campos obligatorios</mensaje_introducir_datos>
+			<mensaje_email>Formanto email incorrecto</mensaje_email>
+		</mesajes>
+	
+	
+	</lenguaje_default>

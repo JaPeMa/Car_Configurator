@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import LectorXML.LectorCastellano;
 import LectorXML.LectorCochesConfig;
 import idao.ICoches;
 import objetos.Accesory;
@@ -14,10 +15,14 @@ import objetos.Engine;
 import objetos.Model;
 
 import java.awt.GridBagLayout;
+import java.awt.Image;
+
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -58,6 +63,7 @@ public class CompraAccesoris extends JFrame {
 	 * Create the frame.
 	 */
 	public CompraAccesoris(String modelId, String engineId) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
 		
 		ArrayList<Accesory> accesories = gestorCars.getAccesoryAll();
 		
@@ -250,7 +256,7 @@ public class CompraAccesoris extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				pantallaFinal.main(model.getName() + engine.getName() + accesoriesSelecteds, suma);
+				pantalla_final.main(model.getName() + engine.getName() + accesoriesSelecteds, suma);
 				setVisible(false);
 				
 			}

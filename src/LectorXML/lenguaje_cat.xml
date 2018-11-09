@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+	<lenguaje_ca>
+		<boton_entrar>CA_ENTRAR</boton_entrar>
+		<boton_guardar>CA_GUARDAR</boton_guardar>
+		<boton_siguiente>CA_SIGUIENTE</boton_siguiente>
+		<boton_anterior>CA_ANTERIOR</boton_anterior>
+		<boton_finalizar>CA_FINALIZAR</boton_finalizar>
+		<boton_atras>CA_ATRAS</boton_atras>
+		<boton_nuevo>CA_NUEVO</boton_nuevo>
+		<titulo_Default>IES Esteve Terrades</titulo_Default>
+		<user>Usuario: </user>
+		
+		<login>
+			<login>CA_Login:</login>
+			<pass>CA_Password:</pass>
+		</login>
+		
+		<datos_del_cliente>
+			<titulo>CA_DATOS DEL CLIENTE</titulo>
+			<nombre>CA_Nombre*</nombre>
+			<Primer_apellido>CA_Primer Apellido*</Primer_apellido>
+			<Segindo_apellido>CA_Segundo apellido*</Segindo_apellido>
+			<direccion>CA_Direccion*</direccion>
+			<correo_electronico>CA_Correo Electronico*</correo_electronico>
+			<genero>CA_Genero</genero>
+			<genero_hombre>CA_Hombre</genero_hombre>
+			<genero_mujer>CA_Mujer</genero_mujer>
+			<genero_nodeterminado>CA_No Determinado</genero_nodeterminado>
+			<fecha_nacimiento>CA_Fecha Nacimiento</fecha_nacimiento>
+		</datos_del_cliente>
+		
+		<seleccionar_el_modelo>
+			<titulo>CA_SELECCIONAR EL MODELO DE COCHE</titulo>
+		</seleccionar_el_modelo>
+		
+		<seleccionar_caracteristicas>
+			<titulo>CA_SELECCION DE CARACTERISTICAS DLE MODELO</titulo>
+		</seleccionar_caracteristicas>
+		
+		<comprar_accesorios>
+			<titulo>CA_COMPRA DE ACCESORIOS</titulo>
+			<augmento_precio>CA_Augmento en el precio:</augmento_precio>
+		</comprar_accesorios>
+		
+		<resumen>
+			<titulo>CA_RESULTADO</titulo>
+			<precio_final>CA_precio final:</precio_final>
+		</resumen>
+		
+		<mesajes>
+			<mensaje_entrada_empreado>CA_Has entrado en la versión de empleado</mensaje_entrada_empreado>
+			<mensaje_no_entrada_empreado>CA_No has entrado en la versión de empleado</mensaje_no_entrada_empreado>
+			<mensaje_user_o_pass_incorecto>CA_El usuario o la contraseña introducida no es válida</mensaje_user_o_pass_incorecto>
+			<mensaje_salir_singuardar>CA_Quieres salir sin guardar??</mensaje_salir_singuardar>
+			<mensaje_operacion_correcta>CA_La operación se ha realizado correctamente</mensaje_operacion_correcta>
+			<mensaje_introducir_datos>CA_Introduce todos los campos obligatorios</mensaje_introducir_datos>
+			<mensaje_email>CA_Formanto email incorrecto</mensaje_email>
+		</mesajes>
+	
+	
+	</lenguaje_ca>

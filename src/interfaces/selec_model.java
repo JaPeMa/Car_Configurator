@@ -14,6 +14,8 @@ import objetos.Engine;
 import objetos.Model;
 
 import java.awt.GridBagLayout;
+import java.awt.Image;
+
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
@@ -21,6 +23,7 @@ import java.awt.Font;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Insets;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
@@ -53,6 +56,8 @@ public class selec_model extends JFrame {
 	 * Create the frame.
 	 */
 	public selec_model(String id) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 502, 372);
 		contentPane = new JPanel();
