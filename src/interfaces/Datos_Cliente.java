@@ -110,7 +110,7 @@ public class Datos_Cliente extends JFrame {
 	}
 
 	public Datos_Cliente(String userName, Cliente cliente) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 		ConfigurationLoader conf = ConfigurationLoader.getConfiguration();
 		texts = LectorCastellano.leer();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

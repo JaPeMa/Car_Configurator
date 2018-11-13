@@ -73,7 +73,7 @@ public class ModeloCoche extends JFrame {
 	 * Create the frame.
 	 */
 	public ModeloCoche(String userName, Cliente cliente) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 		texts = LectorCastellano.leer();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 645, 588);

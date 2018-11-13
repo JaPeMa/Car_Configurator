@@ -41,7 +41,7 @@ public class pantalla_final extends JFrame {
 	 * Create the frame.
 	 */
 	public pantalla_final(String resumen, Integer precioFinal) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 566, 386);
 		contentPane = new JPanel();
@@ -87,6 +87,7 @@ public class pantalla_final extends JFrame {
 		contentPane.add(btnNewButton, gbc_btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				Datos_Cliente.main("??");
 				setVisible(false);
 			}

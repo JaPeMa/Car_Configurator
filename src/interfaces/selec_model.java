@@ -56,7 +56,7 @@ public class selec_model extends JFrame {
 	 * Create the frame.
 	 */
 	public selec_model(String id) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 502, 372);

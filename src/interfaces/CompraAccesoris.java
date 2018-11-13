@@ -63,7 +63,7 @@ public class CompraAccesoris extends JFrame {
 	 * Create the frame.
 	 */
 	public CompraAccesoris(String modelId, String engineId) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("../Car_Configurator/icono.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 		
 		ArrayList<Accesory> accesories = gestorCars.getAccesoryAll();
 		
