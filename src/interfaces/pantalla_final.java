@@ -5,6 +5,15 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,6 +37,7 @@ public class pantalla_final extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					ficheroFinal();
 					pantalla_final frame = new pantalla_final(resumen,precioFinal);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -94,4 +104,55 @@ public class pantalla_final extends JFrame {
 		});
 	}
 
+	private static void ficheroFinal() {
+
+		File fichero = new File("fs_employee.txt");
+
+		try {
+			FileReader fr = new FileReader(fichero);
+			BufferedReader br = new BufferedReader(fr);
+			ArrayList<String> datos = new ArrayList<String>();
+			String linea;
+
+			while ((linea = br.readLine()) != null) {
+				datos.add(linea);
+			}
+
+			fr.close();
+			br.close();
+			fichero.delete();
+			
+			File fichero_final =new File("fs_employee_" + obtenerFecha() + "_i_" + obtenerHora() + ".txt");
+
+			FileWriter fw = new FileWriter(fichero_final);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			for (int i = 1; i < datos.size(); i++) {
+				bw.write(datos.get(i));
+				bw.newLine();
+			}
+
+			bw.close();
+			fw.close();
+			
+			File fichero_nuevo = new File("fs_employee.txt");
+			fichero_nuevo.createNewFile();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static String obtenerHora() {
+		Date fecha = new Date();
+		return Integer.toString(fecha.getHours()) + Integer.toString(fecha.getMinutes());
+	}
+
+	private static String obtenerFecha() {
+		Calendar c = Calendar.getInstance();
+		String dia = Integer.toString(c.get(Calendar.DATE));
+		String mes = Integer.toString(c.get(Calendar.MONTH));
+		String any = Integer.toString(c.get(Calendar.YEAR));
+		return any + mes + dia;
+	}
 }

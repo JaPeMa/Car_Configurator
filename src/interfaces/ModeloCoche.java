@@ -20,6 +20,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
@@ -216,11 +223,12 @@ public class ModeloCoche extends JFrame {
 		JButton btnNewButton_6 = new JButton(texts[5]);
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Datos_Cliente pantalla_datos = new Datos_Cliente(cliente,userName);
-				
+				fichero_temporal_borrar();
+				Datos_Cliente pantalla_datos = new Datos_Cliente(cliente, userName);
 				setVisible(false);
 			}
 		});
+
 
 		GridBagConstraints gbc_btnNewButton_6 = new GridBagConstraints();
 		gbc_btnNewButton_6.fill = GridBagConstraints.HORIZONTAL;
@@ -234,9 +242,11 @@ public class ModeloCoche extends JFrame {
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
+				fichero_temporal(gestorCars.getModelAll().get(index).getId());
 				selec_model.main(gestorCars.getModelAll().get(index).getId());
 			}
 		});
+
 
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -298,7 +308,49 @@ public class ModeloCoche extends JFrame {
 	}
 	private void changeIcon() {
 		lblNewLabel_1.setIcon(Img2[index]);
-		txtFdgdfgdas.setText(
-				gestorCars.getModelAll().get(index).getDescript());
+		txtFdgdfgdas.setText(gestorCars.getModelAll().get(index).getDescript());
+	}
+
+	private void fichero_temporal(String id_coche) {
+		File fichero = new File("fs_employee.txt");
+		try {
+			FileWriter fw = new FileWriter(fichero, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.newLine();
+			bw.write("[MODELO COCHE] " + id_coche);
+			bw.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void fichero_temporal_borrar() {
+		File fichero = new File("fs_employee.txt");
+		try {
+			FileReader fr = new FileReader(fichero);
+			BufferedReader br = new BufferedReader(fr);
+			ArrayList<String> datos = new ArrayList<String>();
+			String linea;
+
+			while ((linea = br.readLine()) != null) {
+				datos.add(linea);
+			}
+
+			FileWriter fw = new FileWriter(fichero);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			for (int i = 0; i < datos.size() - 1; i++) {
+				bw.write(datos.get(i));
+				if (i!=datos.size() - 2) {
+					bw.newLine();
+				}
+			}
+			bw.close();
+			fr.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

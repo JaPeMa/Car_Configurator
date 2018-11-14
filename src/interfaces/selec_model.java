@@ -25,6 +25,13 @@ import javax.swing.JButton;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
@@ -82,12 +89,13 @@ public class selec_model extends JFrame {
 		JButton btnNewButton = new JButton("Anterior");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ModeloCoche.main(null, null);
+				fichero_temporal_borrar();
+				ModeloCoche.main("Jaime", null);
+				setVisible(false);
 			}
 		});
+
 		ICoches configcoches = new LectorCochesConfig();
-		
-		
 		
 		DefaultListModel<String> dlm = new DefaultListModel<String>();
 	    JList<String> list = new JList<>(dlm);
@@ -120,13 +128,14 @@ public class selec_model extends JFrame {
 		JButton btnNewButton_1 = new JButton("Siguiente");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String engineId = "";
-				for(Engine engine: gestorCars.getEngineAll()) {
+				String engineId = "", submodelo = null;
+				for (Engine engine : gestorCars.getEngineAll()) {
 					if (list.getSelectedValue().equals(submodel + " - " + engine.getDescript())) {
 						engineId = engine.getId();
+						submodelo = submodel + " - " + engine.getDescript();
 					}
 				}
-				
+				fichero_temporal(engineId + " - " + submodelo);
 				CompraAccesoris.main(id, engineId);
 				setVisible(false);
 			}
@@ -138,4 +147,46 @@ public class selec_model extends JFrame {
 		contentPane.add(btnNewButton_1, gbc_btnNewButton_1);
 	}
 
+	private void fichero_temporal(String submodelo) {
+		File fichero = new File("fs_employee.txt");
+		try {
+			FileWriter fw = new FileWriter(fichero, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.newLine();
+			bw.write("[SUBMODELO] " + submodelo);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void fichero_temporal_borrar() {
+		File fichero = new File("fs_employee.txt");
+		try {
+			FileReader fr = new FileReader(fichero);
+			BufferedReader br = new BufferedReader(fr);
+			ArrayList<String> datos = new ArrayList<String>();
+			String linea;
+
+			while ((linea = br.readLine()) != null) {
+				datos.add(linea);
+			}
+
+			FileWriter fw = new FileWriter(fichero);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			for (int i = 0; i < datos.size() - 1; i++) {
+				bw.write(datos.get(i));
+				if (i != datos.size() - 2) {
+					bw.newLine();
+				}
+			}
+
+			bw.close();
+			fr.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

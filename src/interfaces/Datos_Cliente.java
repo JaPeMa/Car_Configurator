@@ -28,6 +28,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -82,18 +83,18 @@ public class Datos_Cliente extends JFrame {
 	public static void guardarDatos() {
 		try {
 			FileWriter fw = new FileWriter(new File("./src/datos/datosCliente.txt"));
-			Cliente c1 = new Cliente(campo_Nombre.getText(), campo_PrimerApellido.getText(), campo_SegundoApellido.getText(),
-					campo_Direccion.getText(), campo_Correo.getText(), genero1(rdbtnHombre, rdbtnMujer, rdbtnNewRadioButton),
-					dateChooser.getDate());
+			Cliente c1 = new Cliente(campo_Nombre.getText(), campo_PrimerApellido.getText(),
+					campo_SegundoApellido.getText(), campo_Direccion.getText(), campo_Correo.getText(),
+					genero(rdbtnHombre, rdbtnMujer, rdbtnNewRadioButton), dateChooser.getDate());
 			fw.write(c1.toString());
 			fw.close();
 		} catch (IOException e) {
-
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	private String genero(JRadioButton rdbtnHombre, JRadioButton rdbtnMujer, JRadioButton rdbtnNewRadioButton) {
+	private static String genero(JRadioButton rdbtnHombre, JRadioButton rdbtnMujer, JRadioButton rdbtnNewRadioButton) {
 		if (rdbtnHombre.isSelected()) {
 			return rdbtnHombre.getLabel();
 		} else if (rdbtnMujer.isSelected()) {
@@ -335,7 +336,8 @@ public class Datos_Cliente extends JFrame {
 				if (comprobar() && email()) {
 					Cliente cliente = new Cliente(campo_Nombre.getText(), campo_PrimerApellido.getText(),
 							campo_SegundoApellido.getText(), campo_Direccion.getText(), campo_Correo.getText(),
-							genero1(rdbtnHombre, rdbtnMujer, rdbtnNewRadioButton), dateChooser.getDate());
+							genero(rdbtnHombre, rdbtnMujer, rdbtnNewRadioButton), dateChooser.getDate());
+					fichero_temporal(cliente, userName);
 					siguientePantalla(userName, cliente);
 				}
 			}
@@ -365,7 +367,7 @@ public class Datos_Cliente extends JFrame {
 	private boolean email() {
 		String email = campo_Correo.getText();
 		char arroba_char = '@';
-		int ar_cont = 0, ar_position;
+		int ar_cont = 0;
 
 		for (int i = 0; i < email.length(); i++) {
 			if (email.charAt(i) == arroba_char) {
@@ -384,18 +386,7 @@ public class Datos_Cliente extends JFrame {
 		ModeloCoche.main(userName, cliente);
 		setVisible(false);
 	}
-
-	private static String genero1(JRadioButton rdbtnHombre, JRadioButton rdbtnMujer, JRadioButton rdbtnNewRadioButton) {
-		if (rdbtnHombre.isSelected()) {
-			return rdbtnHombre.getLabel();
-		} else if (rdbtnMujer.isSelected()) {
-			return rdbtnMujer.getLabel();
-		} else if (rdbtnNewRadioButton.isSelected()) {
-			return rdbtnNewRadioButton.getLabel();
-		}
-		return null;
-	}
-
+ 
 	private void rellenar(Cliente cliente) {
 		if (cliente != null) {
 			campo_Nombre.setText(cliente.getNombre());
@@ -405,18 +396,34 @@ public class Datos_Cliente extends JFrame {
 			campo_Correo.setText(cliente.getEmail());
 			dateChooser.setDate(cliente.getFecha());
 
-			if (rdbtnMujer.getLabel() == cliente.getGenero()) {
+			if (rdbtnMujer.getLabel().equals(cliente.getGenero())) {
 				rdbtnMujer.setSelected(true);
 			}
 
-			if (rdbtnHombre.getLabel() == cliente.getGenero()) {
+			if (rdbtnHombre.getLabel().equals(cliente.getGenero())) {
 				rdbtnHombre.setSelected(true);
 			}
 
-			if (rdbtnNewRadioButton.getLabel() == cliente.getGenero()) {
+			if (rdbtnNewRadioButton.getLabel().equals(cliente.getGenero())) {
 				rdbtnNewRadioButton.setSelected(true);
 			}
+		}
+	}
 
+	private void fichero_temporal(Cliente cliente, String userName) {
+		File fichero = new File("fs_employee.txt");
+		try {
+			FileWriter fw = new FileWriter(fichero);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write("Datos Temporales");
+			bw.newLine();
+			bw.write(userName);
+			bw.newLine();
+			bw.write(cliente.toString());
+
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
