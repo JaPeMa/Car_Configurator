@@ -33,12 +33,12 @@ public class pantalla_final extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String resumen, Integer precioFinal) {
+	public static void main(String resumen, Integer precioFinal, String user) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					ficheroFinal();
-					pantalla_final frame = new pantalla_final(resumen,precioFinal);
+					pantalla_final frame = new pantalla_final(resumen,precioFinal, user);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class pantalla_final extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public pantalla_final(String resumen, Integer precioFinal) {
+	public pantalla_final(String resumen, Integer precioFinal, String user) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 566, 386);
@@ -98,7 +98,7 @@ public class pantalla_final extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				Datos_Cliente.main("??");
+				Datos_Cliente.main(user);
 				setVisible(false);
 			}
 		});

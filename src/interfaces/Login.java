@@ -198,12 +198,11 @@ public class Login extends JFrame {
 					if (datos.get(1).equals(user)) {
 						noPuedeCargar = false;
 
-						if (confirmarCarga()) {
+						if (datos.size()>2 && confirmarCarga()) {
 							switch (datos.size()) {
 							case 3:
 								Datos_Cliente pantalla_datos = new Datos_Cliente(obtenerCliente(datos), user);
 								break;
-
 							case 4:
 								fichero_temporal_borrar();
 								ModeloCoche.main(user, obtenerCliente(datos));
@@ -211,21 +210,21 @@ public class Login extends JFrame {
 
 							case 5:
 								fichero_temporal_borrar();
-								selec_model.main(idCoche(datos));
+								selec_model.main(idCoche(datos), user, obtenerCliente(datos));
 								break;
 
 							case 7:
 								fichero_temporal_borrar();
 								fichero_temporal_borrar();
 								String[] dc = datos.get(4).split("] ");
-								CompraAccesoris.main(idCoche(datos), dc[1].substring(0, dc[1].indexOf(" -")));
+								CompraAccesoris.main(idCoche(datos), dc[1].substring(0, dc[1].indexOf(" -")), user,obtenerCliente(datos));
 								break;
 
 							default:
+								noPuedeCargar = true;
 								break;
 							}
 						} else {
-							noPuedeCargar = true;
 						}
 					}
 				}

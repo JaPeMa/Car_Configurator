@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import LectorXML.LectorCochesConfig;
+import datos.Cliente;
 import idao.ICoches;
 import objetos.Accesory;
 import objetos.Engine;
@@ -45,12 +46,13 @@ public class selec_model extends JFrame {
 	String submodel = "";
 	/**
 	 * Launch the application.
+	 * @param cliente 
 	 */
-	public static void main(String args) {
+	public static void main(String args, String user, Cliente cliente) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					selec_model frame = new selec_model(args);
+					selec_model frame = new selec_model(args, user, cliente);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -62,7 +64,7 @@ public class selec_model extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public selec_model(String id) {
+	public selec_model(String id,String user,Cliente cliente) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,7 +92,7 @@ public class selec_model extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				fichero_temporal_borrar();
-				ModeloCoche.main("Jaime", null);
+				ModeloCoche.main(user, cliente);
 				setVisible(false);
 			}
 		});
@@ -136,7 +138,7 @@ public class selec_model extends JFrame {
 					}
 				}
 				fichero_temporal(engineId + " - " + submodelo);
-				CompraAccesoris.main(id, engineId);
+				CompraAccesoris.main(id, engineId, user, cliente);
 				setVisible(false);
 			}
 		});

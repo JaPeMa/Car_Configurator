@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import LectorXML.LectorCastellano;
 import LectorXML.LectorCochesConfig;
+import datos.Cliente;
 import idao.ICoches;
 import objetos.Accesory;
 import objetos.Engine;
@@ -50,12 +51,13 @@ public class CompraAccesoris extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param cliente 
 	 */
-	public static void main(String args, String engineId) {
+	public static void main(String args, String engineId, String user, Cliente cliente) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CompraAccesoris frame = new CompraAccesoris(args, engineId);
+					CompraAccesoris frame = new CompraAccesoris(args, engineId, user, cliente);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -67,7 +69,7 @@ public class CompraAccesoris extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CompraAccesoris(String modelId, String engineId) {
+	public CompraAccesoris(String modelId, String engineId, String user,Cliente cliente) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icono.png"));
 
 		ArrayList<Accesory> accesories = gestorCars.getAccesoryAll();
@@ -108,7 +110,7 @@ public class CompraAccesoris extends JFrame {
 		gbc_lblNewLabel.gridy = 0;
 		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 
-		JLabel lblNewLabel_1 = new JLabel("sadfasdpofnsadnfoinsdoifnsadifcsadnc+asdvcs");
+		JLabel lblNewLabel_1 = new JLabel("ACCESORIOS");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.gridwidth = 8;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
@@ -253,7 +255,7 @@ public class CompraAccesoris extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fichero_temporal_borrar();
-				selec_model.main(modelId);
+				selec_model.main(modelId, user, cliente);
 				setVisible(false);
 			}
 		});
@@ -269,7 +271,7 @@ public class CompraAccesoris extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				fichero_temporal(obtener_accesorios(chckbxYantasDeAleacin, chckbxNavegador, chckbxNewCheckBox,
 						chckbxAparcamientoAutotico, chckbxNewCheckBox_1, chckbxAsientosCalfectados));
-				pantalla_final.main(model.getName() + engine.getName() + accesoriesSelecteds, suma);
+				pantalla_final.main(model.getName() + engine.getName() + accesoriesSelecteds, suma, user);
 				setVisible(false);
 
 			}

@@ -243,7 +243,7 @@ public class ModeloCoche extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				fichero_temporal(gestorCars.getModelAll().get(index).getId());
-				selec_model.main(gestorCars.getModelAll().get(index).getId());
+				selec_model.main(gestorCars.getModelAll().get(index).getId(), userName, cliente);
 			}
 		});
 
